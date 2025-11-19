@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal de Suscripciones - Oberstaff</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <div class="logo">
+                <i class="fas fa-crown"></i>
+                <h1>Oberstaff Subscriptions</h1>
+            </div>
+            <div class="status-badge" id="apiStatus">
+                <i class="fas fa-circle"></i>
+                <span>Conectando...</span>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <!-- Search Section -->
+            <section class="search-section">
+                <div class="search-card">
+                    <h2><i class="fas fa-search"></i> Consultar Suscripción</h2>
+                    <p>Ingresa tu User ID para ver los detalles de tu suscripción</p>
+                    
+                    <div class="search-form">
+                        <div class="input-group">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="userId" placeholder="user_001" value="user_001">
+                        </div>
+                        <button id="btnLoad" class="btn-primary">
+                            <i class="fas fa-sync"></i>
+                            <span>Cargar Suscripción</span>
+                        </button>
+                    </div>
+
+                    <div class="quick-users">
+                        <span>Usuarios de prueba:</span>
+                        <div class="user-tags">
+                            <span class="user-tag" data-user="user_001">user_001</span>
+                            <span class="user-tag" data-user="user_002">user_002</span>
+                            <span class="user-tag" data-user="user_003">user_003</span>
+                            <span class="user-tag" data-user="user_004">user_004</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Status Message -->
+            <div id="status" class="status-message hidden">
+                <div class="spinner"></div>
+                <span>Cargando información de la suscripción...</span>
+            </div>
+
+            <!-- Subscription Data -->
+            <section id="subscriptionData" class="subscription-section hidden">
+                <div class="subscription-card">
+                    <div class="card-header">
+                        <h3><i class="fas fa-id-card"></i> Información de la Suscripción</h3>
+                        <div class="plan-badge" id="planBadge">
+                            <span id="subPlan">Pro</span>
+                        </div>
+                    </div>
+
+                    <div class="user-info">
+                        <div class="info-item">
+                            <label><i class="fas fa-user-tag"></i> User ID</label>
+                            <span id="subUser" class="info-value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <label><i class="fas fa-envelope"></i> Email</label>
+                            <span id="subEmail" class="info-value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <label><i class="fas fa-star"></i> Plan</label>
+                            <span id="subPlanText" class="info-value">-</span>
+                        </div>
+                        <div class="info-item">
+                            <label><i class="fas fa-circle"></i> Estado</label>
+                            <span id="subStatus" class="status-badge status-active">-</span>
+                        </div>
+                    </div>
+
+                    <div class="dates-grid">
+                        <div class="date-card">
+                            <div class="date-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="date-info">
+                                <label>Trial Finaliza</label>
+                                <span id="subTrial" class="date-value">-</span>
+                            </div>
+                        </div>
+                        <div class="date-card">
+                            <div class="date-icon">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <div class="date-info">
+                                <label>Próximo Cobro</label>
+                                <span id="subNext" class="date-value">-</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <p>&copy; 2024 Oberstaff. Sistema de Gestión de Suscripciones</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

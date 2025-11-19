@@ -1,13 +1,18 @@
 # backend/schemas.py
 from pydantic import BaseModel
-from typing import Optional
 from datetime import datetime
+from typing import Optional
 
 class SubscriptionOut(BaseModel):
     user_id: str
-    email: Optional[str] = None
-    plan_type: Optional[str] = None
+    email: str
+    plan_type: str
     status: str
     trial_ends_at: Optional[datetime] = None
     next_billing_at: Optional[datetime] = None
     last_payment_attempt: Optional[datetime] = None
+    created_at: Optional[datetime] = None
+    updated_at: Optional[datetime] = None
+    
+    class Config:
+        from_attributes = True
