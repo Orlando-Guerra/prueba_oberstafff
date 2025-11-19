@@ -1,4 +1,4 @@
-// script.js - VERSIÓN MEJORADA PARA EL NUEVO DISEÑO
+
 document.addEventListener('DOMContentLoaded', function() {
     console.log('✅ Portal de Suscripciones cargado');
     

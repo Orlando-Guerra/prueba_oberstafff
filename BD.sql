@@ -22,7 +22,7 @@ CREATE TABLE IF NOT EXISTS public.automation_logs (
   user_id TEXT,
   action TEXT,
   error_message TEXT,
-  metadata JSONB,            -- opcional: datos extra
+  metadata JSONB,            
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
